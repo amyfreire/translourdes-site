@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11%;
+
+    --primary: 0 0% 11%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 82%;
+    --secondary-foreground: 0 0% 11%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 318 96% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 82%;
+    --input: 0 0% 82%;
+    --ring: 318 96% 45%;
+
+    --radius: 0.75rem;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 11%) 0%, hsl(0 0% 20%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(318 96% 45%) 0%, hsl(318 96% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 11%) 0%, hsl(0 0% 15%) 50%, hsl(318 96% 35%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 95% / 0.1) 0%, hsl(0 0% 95% / 0.05) 100%);
+    
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 11% / 0.08);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 11% / 0.12);
+    --shadow-strong: 0 20px 50px -12px hsl(0 0% 11% / 0.25);
+    --shadow-glow: 0 0 40px hsl(318 96% 45% / 0.4);
+    
+    --blur-glass: blur(12px);
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 11%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 11%;
+
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 318 96% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 318 96% 45%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 11%) 0%, hsl(0 0% 15%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(318 96% 45%) 0%, hsl(318 96% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 11%) 50%, hsl(318 96% 25%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 15% / 0.1) 0%, hsl(0 0% 15% / 0.05) 100%);
+    
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 20px 50px -12px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(318 96% 45% / 0.5);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased text-sm;
+  }
+  
+  h1 {
+    @apply font-heading text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply font-heading text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply font-heading text-xl md:text-2xl;
+  }
+  
+  h4, h5, h6 {
+    @apply font-heading text-lg md:text-xl;
+  }
+  
+  p {
+    @apply text-sm md:text-base;
+  }
+}
+
+@layer utilities {
+  /* Safe area for mobile devices with notch/home indicator */
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
